@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Clicker</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Add CSS styles for the admin popup and menu */
+        #admin-popup {
+            display: none; /* Initially hidden */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+        #admin-popup input {
+            display: block;
+            margin-bottom: 10px;
+        }
+        #admin-popup button {
+            margin-right: 10px;
+        }
+        #admin-login-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        #admin-menu {
+            display: none; /* Initially hidden */
+            position: fixed;
+            top: 60px;
+            right: 10px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+        #admin-menu input {
+            display: block;
+            margin-bottom: 10px;
+        }
+        #admin-menu button {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button id="admin-login-button">Admin Login</button>
+        <div id="admin-popup">
+            <label for="username">Username:</label>
+            <input type="text" id="username" placeholder="Enter username">
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Enter password">
+            <button id="login-button">Login</button>
+            <button id="cancel-button">Cancel</button>
+        </div>
+        <div id="admin-menu">
+            <h2>Admin Menu</h2>
+            <p>Current Cookies: <span id="current-cookies">0</span></p>
+            <label for="remove-cookies">Remove Cookies:</label>
+            <input type="number" id="remove-cookies" value="0">
+            <button id="remove-cookies-button">Remove</button>
+            <label for="set-cookies">Set Cookies:</label>
+            <input type="number" id="set-cookies" value="0">
+            <button id="set-cookies-button">Set</button>
+        </div>
+        <h1>Cookie Clicker</h1>
+        <div id="cookie-container">
+            <img id="cookie" src="cookie.png" alt="Cookie">
+        </div>
+        <div id="info">
+            <p>Cookies: <span id="cookie-count">0</span></p>
+            <p>Cookies per Click: <span id="cookies-per-click">1</span></p>
+            <div id="upgrades">
+                <div class="upgrade">
+                    <button class="upgrade-button" data-name="Cursor" data-base-cost="100" data-base-effect="2">Cursor (Cost: 100)</button>
+                    <span class="upgrade-info" data-name="Cursor">Level: 0, Cost: 100</span>
+                </div>
+                <div class="upgrade">
+                    <button class="upgrade-button" data-name="Grandma" data-base-cost="500" data-base-effect="10">Grandma (Cost: 500)</button>
+                    <span class="upgrade-info" data-name="Grandma">Level: 0, Cost: 500</span>
+                </div>
+                <div class="upgrade">
+                    <button class="upgrade-button" data-name="Farm" data-base-cost="2000" data-base-effect="50">Farm (Cost: 2000)</button>
+                    <span class="upgrade-info" data-name="Farm">Level: 0, Cost: 2000</span>
+                </div>
+                <!-- Add more upgrades similarly -->
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
